@@ -1,0 +1,27 @@
+
+
+GET All Notes:
+
+curl http://localhost:3000/notes
+
+
+POST a New Note:
+
+
+curl -X POST -H "Content-Type: application/json" -d "{\"title\":\"New Note\",\"content\":\"This is a new note.\"}" http://localhost:3000/notes
+
+
+PUT (Update) a Note by ID:
+
+
+curl -X PUT -H "Content-Type: application/json" -d "{\"title\":\"Updated Note\",\"content\":\"This is the updated content.\"}" http://localhost:3000/notes/{note_id}
+
+
+DELETE a Note by ID:
+
+
+curl -X DELETE http://localhost:3000/notes/{note_id}
+
+Search :
+
+curl http://localhost:3000/notes/search?query=" "
