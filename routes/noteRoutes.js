@@ -7,6 +7,6 @@ router.post('/notes', noteController.createNote);
 router.delete('/notes/:id', noteController.deleteNote);
 router.put('/notes/:id', noteController.updateNote);
 router.get('/notes/search', noteController.searchNotes);
-
+router.get('/notes/paginate', noteController.paginateNotes);
 module.exports = router;
 

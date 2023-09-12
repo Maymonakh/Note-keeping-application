@@ -68,4 +68,31 @@ module.exports = {
       res.status(500).json({ error: 'Error searching for notes' });
     }
   },
+
+  paginateNotes: async (req, res) => {
+    try {
+      const page = req.query.page ? parseInt(req.query.page) : 1;
+      const limit = req.query.limit ? parseInt(req.query.limit) : 4;
+      const skip = (page - 1) * limit;
+
+      const totalNotes = await Note.countDocuments();
+      const totalPages = Math.ceil(totalNotes / limit);
+
+      const notes = await Note.find()
+        .skip(skip)
+        .limit(limit)
+        .sort({ creationDate: 'desc' });
+
+      res.json({
+        notes,
+        totalPages,
+        currentPage: page,
+        totalNotes,
+      });
+    } catch (error) {
+      res.status(500).json({ error: 'Error retrieving notes' });
+    }
+  },
+
+
 };
