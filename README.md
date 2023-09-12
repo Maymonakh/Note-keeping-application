@@ -1,10 +1,10 @@
-Notes-Keeping Application
+**Notes-Keeping Application**
 
 The Notes-Keeping Application is a simple web-based note-taking application built using Node.js, Express.js, and MongoDB. It allows users to create, retrieve, update, and delete notes, as well as search for notes by title or content. The application also supports pagination for efficiently managing a large number of notes.
 
 
 
-Features:
+**Features:**
 
 Create new notes with a title and content.
 
@@ -22,7 +22,7 @@ Express.js for handling HTTP requests.
 
 
 
-Usage:
+**Usage:**
 
 You can interact with the Notes-Keeping Application using API requests. Here are some sample requests:
 
